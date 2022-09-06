@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-auto">
+    <h1 class="middle" >Welcome {{posts.[0].user.username}}!</h1>
+  </div>
+</div>
+
+
+
+{{!-- ------------------- --}}
+   
+   <div class="posts">
+  {{#if posts}}
+    <h3 class="middle">Your Blog Posts:</h3>
+    {{#each posts}}
+<div class=" text-center">
+          <div class="card">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+        <h4><a href="/dashboard/posts/{{id}}">{{title}}</a></h4>
+        <p>{{content}}</p>
+        <p>Created on: {{format_date date_created}}</p>
+      </div>
+    </div>
+</div>
+    {{/each}}
+</div>
+  {{/if}}  
+</div>
+ </div>
+    </div>
+
+<script src="/js/newPost.js"></script>
