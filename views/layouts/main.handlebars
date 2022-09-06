@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Blog</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+      <nav class=" navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle float-left"
+              data-toggle="collapse"
+              data-target="#myNavbar"
+            >
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"></a>
+          </div>
+          
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/">HOME</a></li>
+              <li><a href="/dashboard">DASHBOARD</a></li>
+              
+             {{!-- when you login 'create new blog should pop up --}}
+              {{#if logged_in}}
+        <li><a href="/createBlog">CREATE A NEW BLOG!</a></li> 
+        <li><a href="" id="logout"> LOGOUT </a></li> 
+        {{else}}
+    <li><a href="/login">LOG IN</a></li>
+        {{/if}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <br>
+    <br>
+    <br>
+
+               <h1>
+           👩‍💻 TECH BLOG 👩‍💻
+        </h1>
+        <div class = "centerit"></div>
+        <p class ="use">Feel free to vent, ask questions or talk about anything related to tech!!!!</p>
+</div>
+
+          {{{ body }}}
+
+      </body>   
+
+
+    <div >
+       {{!-- <img id ="girlwithlaptop" src="/images/GirlsinTEch.jpg" alt = "An image of a a girl using a laptop"/> --}}
+
+      <footer class="footer">Produced and Created by Jayad</footer>
+      </div>
+<script src="js/logout.js"></script>
+  </html>
