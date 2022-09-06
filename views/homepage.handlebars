@@ -1,0 +1,29 @@
+<br>
+<h2 class ="middle">Latest Goss ☕</h2>
+<br>
+ <div class="posts">
+     {{#each postData }}
+      <div class=" text-center">
+          <div class="card">
+          <div class="col-sm-4">
+            <div class="thumbnail">
+                <h2>
+          <a href="/posts/{{id}}">{{title}}</a>
+        </h2>
+        <div>
+          Post by
+          {{user.username}}
+          </div>
+          <div>
+          {{format_date date_created}}
+          </div>
+  </div>
+  </div>
+    </div>
+    </div>
+        </div>
+    </div>
+     </div>
+          </div>
+  {{/each}}
+</div>
