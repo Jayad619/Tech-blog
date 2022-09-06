@@ -1,0 +1,55 @@
+
+   <br>
+<h2 class ="middle">What do you think?</h2>
+<br>
+   <div class=" text-center">
+          <div class="card">
+            <div class="thumbnail">
+       <div class="card">
+      <div class="card-header bg-light flex-row justify-space-between post-title" data-id="{{posts.id}}">
+        <h2>
+          {{posts.title}}
+        </h2>
+        <h3>
+            {{posts.content}}
+        </h3>
+        <div>
+          Post by
+          {{posts.user.username}}
+          on
+          {{format_date posts.date_created}}
+        </div>
+      </div>
+    </div>
+</div>
+
+   <div class=" text-center">
+          <div class="card">
+  <div class="container">
+       <br>
+      <label for="exampleFormControlTextarea1" class="form-label">Share your comment below:</label>
+      <textarea class="form-control" id="comment-body" rows="3"></textarea>
+    </div>
+     <br>
+       <br>
+    <button type="button" class="btn btn-warning" id="comment-button">Submit</button>
+   </div>
+      </div>
+   <br
+<div>
+{{#if posts.comments}}
+{{#each posts.comments}}
+
+<div class="card">
+  <div class="card-body">
+       <div class="thumbnail">
+    {{content}}
+  </div>
+</div>
+</div>
+
+{{/each}}
+{{/if}}
+</div>
+
+   <script src="/js/comment.js"></script>
