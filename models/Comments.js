@@ -4,6 +4,8 @@ const sequelize = require("../config/connection");
 
 class Comment extends Model {}
 
+// Created models which will allow user to input comments
+
 Comment.init(
   {
     id: {
