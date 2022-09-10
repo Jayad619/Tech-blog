@@ -1,3 +1,4 @@
+// connecting routes for correct areas
 const router = require("express").Router();
 const { User, BlogPost, Comment } = require("../models");
 const withAuth = require("../utils/auth");
@@ -18,6 +19,8 @@ router.get("/", async (req, res) => {
   }
 });
 
+// route to allow user to create posts on the blog
+
 router.get("/posts/:id", async (req, res) => {
   try {
     const postData = await BlogPost.findByPk(req.params.id, {
@@ -27,12 +30,12 @@ router.get("/posts/:id", async (req, res) => {
         },
         {
           model: Comment,
-        }
+        },
       ],
     });
 
     const posts = postData.get({ plain: true });
-    console.log(posts, "received")
+    console.log(posts, "received");
     res.render("posts", {
       posts,
     });
@@ -48,10 +51,8 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get('/createBlog', (req, res) => {
-  res.render('createBlog');
+router.get("/createBlog", (req, res) => {
+  res.render("createBlog");
 });
-
-
 
 module.exports = router;
