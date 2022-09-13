@@ -1,4 +1,3 @@
-// connecting routes for correct areas
 const router = require("express").Router();
 const { User, BlogPost, Comment } = require("../models");
 const withAuth = require("../utils/auth");
@@ -49,10 +48,6 @@ router.get("/login", (req, res) => {
     res.redirect("/");
   }
   res.render("login");
-});
-
-router.get("/createBlog", (req, res) => {
-  res.render("createBlog");
 });
 
 module.exports = router;
