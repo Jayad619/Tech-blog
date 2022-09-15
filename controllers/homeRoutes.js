@@ -12,6 +12,7 @@ router.get("/", async (req, res) => {
     res.render("homepage", {
       postData,
       user_id: req.session.user_id,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
@@ -43,10 +44,16 @@ router.get("/posts/:id", async (req, res) => {
   }
 });
 
-router.get("/login", (req, res) => {
-  if (req.session.logged_in) {
+router.get("/createBlog", (req, res) => {
+  if (!req.session.logged_in) {
     res.redirect("/");
   }
+  res.render("createBlog", {
+    logged_in: req.session.logged_in,
+  });
+});
+
+router.get("/login", (req, res) => {
   res.render("login");
 });
 
